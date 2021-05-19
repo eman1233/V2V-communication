@@ -1,0 +1,42 @@
+
+                      V2V communication System
+                      System disripatin
+					  
+1- using two microcontrollers to communicate with others using UART
+
+2- every microcontroller has 
+         1- Front ultrasonic: to measure front distance
+		    Back ultrasonic: to measure back distance
+		 2-Camera: to Know if accidant happen or not
+		 ("I using switch instead of camera because camera
+		   not exist in simulation")
+		  3-LCD: to show the massage come from another microcontroller
+		  4-Alarm System:to indication
+		  5-Motors : to move the car in certain direction
+		  
+3- MCAL Layer:
+      1-ICU         2-DIO
+	  3-UART
+	  
+4-HAL Layer:
+      1-Ultrasonic         2-Motors
+	  3-Alarm System       4-LCD
+	  5-Camera   
+
+5-Service Layer:
+        Operating System  "FreeRtos"
+
+6-System Funcationality:
+    there are two cars with 2 MCU communicate with each other using uart
+    
+	in any car:
+      **if any car detect object in destance < 30 cm using Back or front ultrasonic this car tell another 
+      and this car detect certain direction to take it another car take certain
+      desion to avoid this error and accidant is not happen and LCD show distance and massage
+
+      **if any car detect an accidant using camera this car tell another car an accidant happen and using ultrasonic 
+      this car measure distance and tell another
+
+     **if any car make an accident , alarm system worked and tell another car 
+     I make an accidant	 
+                    
